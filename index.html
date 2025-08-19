@@ -213,12 +213,78 @@
             min-width: 80px;
         }
 
-        .student-section {
+        .student-info-card {
             background: linear-gradient(135deg, #e8f5e8, #d5f4e6);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 6px 20px rgba(39, 174, 96, 0.2);
+            border: 2px solid #27ae60;
         }
 
-        .student-section th {
-            background: linear-gradient(135deg, #27ae60, #2ecc71);
+        .student-details {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 12px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-right: 4px solid #27ae60;
+        }
+
+        .detail-label {
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 13px;
+            min-width: 40%;
+        }
+
+        .detail-value {
+            color: #34495e;
+            font-size: 13px;
+            text-align: left;
+            flex: 1;
+            padding-right: 10px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            padding: 5px 10px;
+            border-radius: 20px;
+            text-decoration: none;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .facebook {
+            background: linear-gradient(135deg, #3b5998, #4267B2);
+        }
+
+        .instagram {
+            background: linear-gradient(135deg, #E4405F, #C13584);
+        }
+
+        .tiktok {
+            background: linear-gradient(135deg, #000000, #ff0050);
+        }
+
+        .social-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
 
         .empty-row {
@@ -363,6 +429,28 @@
                 padding: 10px 15px;
             }
             
+            .student-info-card {
+                padding: 15px;
+            }
+            
+            .detail-row {
+                padding: 6px 8px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+            }
+            
+            .detail-label {
+                font-size: 12px;
+                min-width: auto;
+            }
+            
+            .detail-value {
+                font-size: 12px;
+                text-align: right;
+                padding-right: 0;
+            }
+            
             table {
                 font-size: 9px;
                 min-width: 500px;
@@ -393,6 +481,14 @@
             }
         }
 
+        .student-section {
+            background: linear-gradient(135deg, #e8f5e8, #d5f4e6);
+        }
+
+        .student-section th {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+        }
+
         .scroll-hint {
             text-align: center;
             color: #667eea;
@@ -407,31 +503,6 @@
         .icon {
             font-size: 16px;
             margin-left: 5px;
-        }
-        
-        .features {
-            margin-top: 20px;
-        }
-        
-        .feature {
-            margin: 8px 0;
-            padding: 8px 12px;
-            background: linear-gradient(135deg, #f8f9ff, #e3e7fc);
-            border-radius: 15px;
-            border-right: 4px solid #667eea;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        
-        .feature-title {
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 3px;
-            font-size: 12px;
-        }
-        
-        .feature-desc {
-            color: #666;
-            font-size: 11px;
         }
         
         .success-message {
@@ -476,14 +547,6 @@
     <div class="page-number">صفحة 1</div>
     
     <div class="container">
-        <div class="main-header">
-            📊 البيانات الخاصة بالطالبة / الرقم القومي
-        </div>
-        
-        <div class="sub-header">
-            💻 الحاسب الآلي موقع التواصل الاجتماعي @gmail.com
-        </div>
-        
         <button class="export-btn" onclick="exportToExcel()">
             <span class="icon">📥</span>
             تصدير إلى Excel
@@ -502,9 +565,46 @@
             👆 اسحب الجداول يميناً ويساراً لعرض جميع الأعمدة
         </div>
 
-        <!-- بيانات الطالبة والوالدين -->
+        <!-- بيانات الطالبة -->
         <div class="section">
-            <div class="section-header">👨‍👩‍👧 بيانات الطالبة والوالدين</div>
+            <div class="section-header">👩‍🎓 بيانات الطالبة</div>
+            <div class="student-info-card">
+                <div class="student-details">
+                    <div class="detail-row">
+                        <span class="detail-label">📝 الاسم الرباعي:</span>
+                        <span class="detail-value">ياسمين رضا صلاح العدل</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">📅 تاريخ الميلاد:</span>
+                        <span class="detail-value">23/1/2007</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">🆔 الرقم القومي:</span>
+                        <span class="detail-value">30701231602405</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">🎓 المهنة:</span>
+                        <span class="detail-value">طالبة</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">💍 الحالة الاجتماعية:</span>
+                        <span class="detail-value">غير متزوجة</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">🔗 روابط التواصل الاجتماعي:</span>
+                        <div class="social-links">
+                            <a href="#" class="social-link facebook">📘 فيسبوك</a>
+                            <a href="#" class="social-link instagram">📷 انستجرام</a>
+                            <a href="#" class="social-link tiktok">🎵 تيك توك</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- بيانات الوالدين -->
+        <div class="section">
+            <div class="section-header">👨‍👩‍👧 بيانات الوالدين</div>
             <div class="table-wrapper">
                 <div class="table-container">
                     <table class="student-section">
@@ -523,16 +623,6 @@
                         <tbody>
                             <tr>
                                 <td class="row-number">1</td>
-                                <td class="name-col">ياسمين رضا صلاح العدل</td>
-                                <td class="date-col">23/1/2007</td>
-                                <td class="id-col">30701231602405</td>
-                                <td>طالبة</td>
-                                <td>غير متزوجة</td>
-                                <td>-</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td class="row-number">2</td>
                                 <td class="name-col">رضا صلاح نصر العدل</td>
                                 <td class="date-col">6/1/1981</td>
                                 <td class="id-col">28101061601593</td>
@@ -542,7 +632,7 @@
                                 <td></td>
                             </tr>
                             <tr>
-                                <td class="row-number">3</td>
+                                <td class="row-number">2</td>
                                 <td class="name-col">حنان عبد الحي عطيه بلحه</td>
                                 <td class="date-col">5/1/1983</td>
                                 <td class="id-col">28301051601845</td>
@@ -794,4 +884,306 @@
 
         <!-- بيانات أبناء الأعمام والعمات -->
         <div class="section">
-            <div class="section-header">👶 بيانات أبناء الأعم
+            <div class="section-header">👶 بيانات أبناء الأعمام والعمات</div>
+            <div class="table-wrapper">
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>م</th>
+                                <th class="name-col">الاسم الرباعي</th>
+                                <th class="date-col">تاريخ الميلاد</th>
+                                <th class="id-col">الرقم القومي</th>
+                                <th>المهنة</th>
+                                <th class="social-col">الحالة الاجتماعية</th>
+                                <th class="children-col">عدد الأولاد</th>
+                                <th class="address-col">محل الإقامة</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="row-number">1</td>
+                                <td class="name-col">ناديه محمد عمر سلامه</td>
+                                <td class="date-col">2/11/1992</td>
+                                <td class="id-col">29211021600601</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="row-number">2</td>
+                                <td class="name-col">عمر محمد عمر سلامه</td>
+                                <td class="date-col">10/9/2002</td>
+                                <td class="id-col">30209101602819</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="row-number">3</td>
+                                <td class="name-col">مي محمد عمر سلامه</td>
+                                <td class="date-col">8/11/2004</td>
+                                <td class="id-col">30411081601121</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="row-number">4</td>
+                                <td class="name-col">محمد ناجي عبد اللطيف عشرين</td>
+                                <td class="date-col">30/9/2001</td>
+                                <td class="id-col">30109301611036</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="row-number">5</td>
+                                <td class="name-col">السيد ناجي عبد اللطيف عشرين</td>
+                                <td class="date-col">9/12/2009</td>
+                                <td class="id-col">30912091600556</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="row-number">6</td>
+                                <td class="name-col">وسام عبد الحي عطيه بلحه</td>
+                                <td class="date-col">17/6/2004</td>
+                                <td class="id-col">30406171600724</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="row-number">7</td>
+                                <td class="name-col">حنان عبد الحي عطيه بلحه</td>
+                                <td class="date-col">31/7/2008</td>
+                                <td class="id-col">30807311600783</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="row-number">8</td>
+                                <td class="name-col">أمنيه باسم عبد الحي عطيه بلحه</td>
+                                <td class="date-col">1/3/2010</td>
+                                <td class="id-col">31003011605823</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- معلومات إضافية -->
+        <div class="section additional-info">
+            <div class="section-header">📋 معلومات إضافية</div>
+            <div class="table-wrapper">
+                <div class="table-container">
+                    <table class="grandparents-table">
+                        <thead>
+                            <tr>
+                                <th class="name-col">البيان</th>
+                                <th class="name-col">الاسم الكامل</th>
+                                <th class="date-col">ملاحظات</th>
+                                <th class="id-col">معلومات أخرى</th>
+                                <th>-</th>
+                                <th class="social-col">-</th>
+                                <th class="children-col">-</th>
+                                <th class="address-col">-</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="name-col" style="background: linear-gradient(135deg, #34495e, #2c3e50); color: white; font-weight: bold;">اسم الجد للأب</td>
+                                <td class="name-col">صلاح نصر السيد العدل</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="name-col" style="background: linear-gradient(135deg, #34495e, #2c3e50); color: white; font-weight: bold;">اسم الجد للأم</td>
+                                <td class="name-col">عبدالحي عطيه جمعه بلحه</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="signature-section">
+            <div class="signature-box">
+                <div class="signature-title">🔗 رابط الطالب</div>
+                <div class="signature-line"></div>
+            </div>
+            
+            <div class="signature-box">
+                <div class="signature-title">📝 رابط استجابة</div>
+                <div class="signature-line"></div>
+            </div>
+            
+            <div class="signature-box">
+                <div class="signature-title">👨‍💼 رابط الإشراف</div>
+                <div class="signature-line"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function exportToExcel() {
+            // إظهار رسالة المعالجة
+            document.getElementById('processing').style.display = 'block';
+            document.getElementById('successMessage').style.display = 'none';
+            
+            setTimeout(() => {
+                // إنشاء workbook جديد
+                const wb = XLSX.utils.book_new();
+                
+                // إنشاء البيانات مع التنسيق
+                const wsData = [];
+                
+                // بيانات الطالبة والوالدين
+                wsData.push(['بيانات الطالبة']);
+                wsData.push(['الاسم الرباعي', 'ياسمين رضا صلاح العدل']);
+                wsData.push(['تاريخ الميلاد', '23/1/2007']);
+                wsData.push(['الرقم القومي', '30701231602405']);
+                wsData.push(['المهنة', 'طالبة']);
+                wsData.push(['الحالة الاجتماعية', 'غير متزوجة']);
+                wsData.push(['روابط التواصل الاجتماعي', 'فيسبوك - انستجرام - تيك توك']);
+                wsData.push([]);
+                
+                wsData.push(['بيانات الوالدين']);
+                wsData.push(['م', 'الاسم الرباعي', 'تاريخ الميلاد', 'الرقم القومي', 'المهنة', 'الحالة الاجتماعية', 'عدد الأولاد', 'محل الإقامة']);
+                wsData.push(['1', 'رضا صلاح نصر العدل', '6/1/1981', '28101061601593', '', '', '', '']);
+                wsData.push(['2', 'حنان عبد الحي عطيه بلحه', '5/1/1983', '28301051601845', '', '', '', '']);
+                wsData.push([]);
+                
+                // بيانات الأخوة وأزواجهم
+                wsData.push(['بيانات الأخوة وأزواجهم']);
+                wsData.push(['م', 'الاسم الرباعي', 'تاريخ الميلاد', 'الرقم القومي', 'المهنة', 'الحالة الاجتماعية', 'عدد الأولاد', 'محل الإقامة']);
+                wsData.push(['1', 'صلاح رضا صلاح العدل', '16/9/2004', '30409161601535', '', '', '', '']);
+                wsData.push(['2', 'حسن رضا صلاح العدل', '1/4/2011', '31104011606855', '', '', '', '']);
+                wsData.push(['3', '', '', '', '', '', '', '']);
+                wsData.push(['4', '', '', '', '', '', '', '']);
+                wsData.push([]);
+                
+                // بيانات الأعمام وزوجاتهم
+                wsData.push(['بيانات الأعمام وزوجاتهم']);
+                wsData.push(['م', 'الاسم الرباعي', 'تاريخ الميلاد', 'الرقم القومي', 'المهنة', 'الحالة الاجتماعية', 'عدد الأولاد', 'محل الإقامة']);
+                wsData.push(['1', 'حسن صلاح نصر العدل', '7/1/1986', '28601071601691', '', '', '', '']);
+                wsData.push(['2', 'جميله الشحات عبد الله جمعه', '22/11/1986', '28611221602301', '', '', '', '']);
+                wsData.push(['3', 'محمد حسن صلاح نصر العدل', '17/7/2007', '30707171602379', '', '', '', '']);
+                wsData.push(['4', '', '', '', '', '', '', '']);
+                wsData.push([]);
+                
+                // بيانات العمات وأزواجهم
+                wsData.push(['بيانات العمات وأزواجهم']);
+                wsData.push(['م', 'الاسم الرباعي', 'تاريخ الميلاد', 'الرقم القومي', 'المهنة', 'الحالة الاجتماعية', 'عدد الأولاد', 'محل الإقامة']);
+                wsData.push(['1', 'صبحه صلاح نصر العدل', '4/3/1974', '27403041600887', '', '', '', '']);
+                wsData.push(['2', 'محمد عمر محمد سلامه', '16/7/1970', '27007161600756', '', '', '', '']);
+                wsData.push(['3', 'يسريه صلاح نصر العدل', '22/1/1984', '28401221602081', '', '', '', '']);
+                wsData.push(['4', 'ناجي عبد اللطيف عبد اللطيف عشرين', '8/1/1977', '27701081601895', '', '', '', '']);
+                wsData.push(['5', '', '', '', '', '', '', '']);
+                wsData.push(['6', '', '', '', '', '', '', '']);
+                wsData.push([]);
+                
+                // بيانات الأخوال وزوجاتهم
+                wsData.push(['بيانات الأخوال وزوجاتهم']);
+                wsData.push(['م', 'الاسم الرباعي', 'تاريخ الميلاد', 'الرقم القومي', 'المهنة', 'الحالة الاجتماعية', 'عدد الأولاد', 'محل الإقامة']);
+                wsData.push(['1', 'وليد عبد الحي عطيه بلحه', '12/9/1979', '27909121601176', '', '', '', '']);
+                wsData.push(['2', 'هانم محمد عبد المطلب علوان', '28/12/1983', '28312281600301', '', '', '', '']);
+                wsData.push(['3', 'باسم عبد الحي عطيه بلحه', '21/2/1988', '28802211600858', '', '', '', '']);
+                wsData.push(['4', 'فاتن فريد محمد الديب', '25/9/1986', '28609251602123', '', '', '', '']);
+                wsData.push([]);
+                
+                // بيانات أبناء الأعمام والعمات
+                wsData.push(['بيانات أبناء الأعمام والعمات']);
+                wsData.push(['م', 'الاسم الرباعي', 'تاريخ الميلاد', 'الرقم القومي', 'المهنة', 'الحالة الاجتماعية', 'عدد الأولاد', 'محل الإقامة']);
+                wsData.push(['1', 'ناديه محمد عمر سلامه', '2/11/1992', '29211021600601', '', '', '', '']);
+                wsData.push(['2', 'عمر محمد عمر سلامه', '10/9/2002', '30209101602819', '', '', '', '']);
+                wsData.push(['3', 'مي محمد عمر سلامه', '8/11/2004', '30411081601121', '', '', '', '']);
+                wsData.push(['4', 'محمد ناجي عبد اللطيف عشرين', '30/9/2001', '30109301611036', '', '', '', '']);
+                wsData.push(['5', 'السيد ناجي عبد اللطيف عشرين', '9/12/2009', '30912091600556', '', '', '', '']);
+                wsData.push(['6', 'وسام عبد الحي عطيه بلحه', '17/6/2004', '30406171600724', '', '', '', '']);
+                wsData.push(['7', 'حنان عبد الحي عطيه بلحه', '31/7/2008', '30807311600783', '', '', '', '']);
+                wsData.push(['8', 'أمنيه باسم عبد الحي عطيه بلحه', '1/3/2010', '31003011605823', '', '', '', '']);
+                wsData.push([]);
+                
+                // معلومات إضافية
+                wsData.push(['معلومات إضافية']);
+                wsData.push(['اسم الجد للأب', 'صلاح نصر السيد العدل', '', '', '', '', '', '']);
+                wsData.push(['اسم الجد للأم', 'عبدالحي عطيه جمعه بلحه', '', '', '', '', '', '']);
+                
+                // إنشاء worksheet
+                const ws = XLSX.utils.aoa_to_sheet(wsData);
+                
+                // تطبيق التنسيق
+                const range = XLSX.utils.decode_range(ws['!ref']);
+                
+                // تعيين عرض الأعمدة
+                ws['!cols'] = [
+                    {wch: 5},   // م
+                    {wch: 30},  // الاسم الرباعي
+                    {wch: 12},  // تاريخ الميلاد
+                    {wch: 18},  // الرقم القومي
+                    {wch: 15},  // المهنة
+                    {wch: 15},  // الحالة الاجتماعية
+                    {wch: 10},  // عدد الأولاد
+                    {wch: 15}   // محل الإقامة
+                ];
+                
+                // دمج خلايا العناوين
+                const merges = [];
+                for (let i = 0; i < wsData.length; i++) {
+                    if (wsData[i] && wsData[i][0] && 
+                        (wsData[i][0].includes('بيانات') || 
+                         wsData[i][0].includes('معلومات إضافية'))) {
+                        merges.push({
+                            s: {r: i, c: 0},
+                            e: {r: i, c: 7}
+                        });
+                    }
+                }
+                ws['!merges'] = merges;
+                
+                // إضافة worksheet إلى workbook
+                XLSX.utils.book_append_sheet(wb, ws, 'البيانات الخاصة بالطالبة');
+                
+                // تصدير الملف
+                XLSX.writeFile(wb, 'البيانات_الخاصة_بالطالبة.xlsx');
+                
+                // إخفاء رسالة المعالجة وإظهار رسالة النجاح
+                document.getElementById('processing').style.display = 'none';
+                document.getElementById('successMessage').style.display = 'block';
+                
+                // إخفاء رسالة النجاح بعد 3 ثواني
+                setTimeout(() => {
+                    document.getElementById('successMessage').style.display = 'none';
+                }, 3000);
+                
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
