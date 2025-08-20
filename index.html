@@ -596,10 +596,10 @@
                     <div class="detail-row">
                         <span class="detail-label"> روابط التواصل الاجتماعي:</span>
                         <div class="social-links">
-                            <a href="https://www.facebook.com/yasmein.alaadl" class="social-link facebook">📘 فيسبوك</a>
-                            <a href="https://www.instagram.com/arselia_eladl/" class="social-link instagram">📷 انستجرام</a>
-                            <a href="https://www.tiktok.com/@yasmeinalaadl?_t=ZS-8z2BvlOKpxn&_r=1" class="social-link tiktok">🎵 تيك توك</a>
-                       <a href="https://wa.me/201099209508" class="social-link whatsapp">💬 واتساب</a>
+                            <a href="https://www.facebook.com/yasmein.alaadl" class="social-link facebook"> فيسبوك</a>
+                            <a href="https://www.instagram.com/arselia_eladl/" class="social-link instagram"> انستجرام</a>
+                            <a href="https://www.tiktok.com/@yasmeinalaadl?_t=ZS-8z2BvlOKpxn&_r=1" class="social-link tiktok"> تيك توك</a>
+                       <a href="https://wa.me/201099209508" class="social-link whatsapp"> واتساب</a>
 
                         </div>
                     </div>
@@ -1084,13 +1084,13 @@
                         if (label && value) {
                             wsData.push([label.textContent.trim(), value.textContent.trim()]);
                         } else if (label && socialLinks) {
-                            // معالجة خاصة لروابط التواصل الاجتماعي
+                            // معالجة خاصة لروابط التواصل الاجتماعي - كل رابط في خانة منفصلة
                             const links = socialLinks.querySelectorAll('a');
-                            const linkUrls = [];
                             links.forEach(link => {
-                                linkUrls.push(link.href);
+                                const linkText = link.textContent.trim();
+                                const linkUrl = link.href;
+                                wsData.push([linkText, linkUrl]);
                             });
-                            wsData.push([label.textContent.trim(), linkUrls.join(' | ')]);
                         }
                     });
                     wsData.push([]);
